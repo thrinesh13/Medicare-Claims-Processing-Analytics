@@ -1,0 +1,62 @@
+{
+  "threshold": 0.9550000000000002,
+  "threshold_basis": "validation-only constrained net-cost minimum (or explicit config override)",
+  "split_counts": {
+    "train": 11179,
+    "holdout": 6627,
+    "maturity_excluded": 2451,
+    "calibration": 1877,
+    "validation": 1866
+  },
+  "features": [
+    "patient_prior_90d",
+    "provider_prior_90d",
+    "provider_matured_n",
+    "provider_payable_rate",
+    "procedure_prior_n",
+    "amount_ratio",
+    "amount_z",
+    "units_ratio",
+    "repeat_service_days",
+    "submission_lag_days",
+    "units",
+    "documentation_present",
+    "coverage_ok",
+    "provider_enrolled",
+    "late_filing",
+    "billing_exception",
+    "suspect_duplicate",
+    "units_exception"
+  ],
+  "config": {
+    "seed": 73129,
+    "n_claims": 24000,
+    "n_patients": 2200,
+    "n_providers": 120,
+    "review_cost": 18.0,
+    "auto_cost": 0.35,
+    "wrong_approval_cost": 250.0,
+    "payment_loss_multiplier": 1.0,
+    "review_minutes": 12.0,
+    "auto_minutes": 0.25,
+    "review_queue_hours": 24.0,
+    "threshold": null,
+    "max_validation_wrong_rate": 0.02,
+    "train_end": "2025-10-01",
+    "calibration_end": "2025-12-01",
+    "validation_end": "2026-02-01",
+    "evaluation_as_of": "2026-09-01"
+  },
+  "holdout_start": "2026-02-01 00:09:11",
+  "holdout_end": "2026-06-30 23:27:48",
+  "brier_raw": 0.03854908401630383,
+  "brier_calibrated": 0.03899099877277415,
+  "log_loss": 0.15039875044562745,
+  "roc_auc": 0.8615797575231086,
+  "ece": 0.017454944047969646,
+  "validation_feasible_thresholds": 23,
+  "net_savings_provider_bootstrap_95": [
+    65263.98074999999,
+    80923.12299999999
+  ]
+}
